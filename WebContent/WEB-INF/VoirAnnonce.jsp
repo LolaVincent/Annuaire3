@@ -5,15 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Creation d'une catégorie</title>
+<title>Annonce</title>
 </head>
 <body>
-	<form  method="post" action="CreationCategorie">
-		<label for="sujet">Sujet : </label>
-		<input type="text" name="sujet" id="sujet" ></input>
-		<br>
-        <input type="submit" value ="envoyer"/>
-    </form>
-    <a href="<c:url value="/admin"/>">Retour à l'accueil</a>
+<table>
+	<tr><td>${annonce.nom }</td></tr>
+	<tr><td>${annonce.adresse }</td></tr>
+	<tr><td>${annonce.numero }</td></tr>
+	<tr><td>${sujet}</td></tr>
+</table>
+<a href="<c:url value="/admin"/>">Retour à l'accueil</a>
 </body>
 </html>

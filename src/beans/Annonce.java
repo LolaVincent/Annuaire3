@@ -12,7 +12,7 @@ public class Annonce  implements java.io.Serializable {
 
     private beans.Categorie categorie;
 
-    private java.lang.Long id;
+    private int id;
 
     private java.lang.String nom;
 
@@ -24,7 +24,7 @@ public class Annonce  implements java.io.Serializable {
     public Annonce(
            java.lang.String adresse,
            beans.Categorie categorie,
-           java.lang.Long id,
+           int id,
            java.lang.String nom,
            java.lang.String numero) {
            this.adresse = adresse;
@@ -80,7 +80,7 @@ public class Annonce  implements java.io.Serializable {
      * 
      * @return id
      */
-    public java.lang.Long getId() {
+    public int getId() {
         return id;
     }
 
@@ -90,7 +90,7 @@ public class Annonce  implements java.io.Serializable {
      * 
      * @param id
      */
-    public void setId(java.lang.Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -152,9 +152,7 @@ public class Annonce  implements java.io.Serializable {
             ((this.categorie==null && other.getCategorie()==null) || 
              (this.categorie!=null &&
               this.categorie.equals(other.getCategorie()))) &&
-            ((this.id==null && other.getId()==null) || 
-             (this.id!=null &&
-              this.id.equals(other.getId()))) &&
+            this.id == other.getId() &&
             ((this.nom==null && other.getNom()==null) || 
              (this.nom!=null &&
               this.nom.equals(other.getNom()))) &&
@@ -178,9 +176,7 @@ public class Annonce  implements java.io.Serializable {
         if (getCategorie() != null) {
             _hashCode += getCategorie().hashCode();
         }
-        if (getId() != null) {
-            _hashCode += getId().hashCode();
-        }
+        _hashCode += getId();
         if (getNom() != null) {
             _hashCode += getNom().hashCode();
         }
@@ -212,8 +208,8 @@ public class Annonce  implements java.io.Serializable {
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("id");
         elemField.setXmlName(new javax.xml.namespace.QName("http://beans", "id"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
-        elemField.setNillable(true);
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("nom");

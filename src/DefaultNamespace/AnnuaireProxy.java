@@ -44,28 +44,22 @@ public class AnnuaireProxy implements DefaultNamespace.Annuaire {
     return annuaire;
   }
   
-  public void modificationCategorie(java.lang.String sujet, int categorie_id) throws java.rmi.RemoteException{
+  public beans.Categorie affichageCategorieNom(java.lang.String sujet) throws java.rmi.RemoteException{
     if (annuaire == null)
       _initAnnuaireProxy();
-    annuaire.modificationCategorie(sujet, categorie_id);
+    return annuaire.affichageCategorieNom(sujet);
   }
   
-  public void modificationAnnonce(int categorie_id, java.lang.String nom, java.lang.String adresse, java.lang.String numero, int annonce_id) throws java.rmi.RemoteException{
+  public void suppressionAnnonce(int annonce_id) throws java.rmi.RemoteException{
     if (annuaire == null)
       _initAnnuaireProxy();
-    annuaire.modificationAnnonce(categorie_id, nom, adresse, numero, annonce_id);
+    annuaire.suppressionAnnonce(annonce_id);
   }
   
-  public void creationAnnonce(int categorie_id, java.lang.String nom, java.lang.String adresse, java.lang.String numero) throws java.rmi.RemoteException{
+  public beans.Annonce[] affichageAnnonceCategorie(java.lang.String sujet) throws java.rmi.RemoteException{
     if (annuaire == null)
       _initAnnuaireProxy();
-    annuaire.creationAnnonce(categorie_id, nom, adresse, numero);
-  }
-  
-  public void creationCategorie(java.lang.String categorie) throws java.rmi.RemoteException{
-    if (annuaire == null)
-      _initAnnuaireProxy();
-    annuaire.creationCategorie(categorie);
+    return annuaire.affichageAnnonceCategorie(sujet);
   }
   
   public beans.Annonce[] affichageAnnonceAdresse(java.lang.String adresse) throws java.rmi.RemoteException{
@@ -86,22 +80,40 @@ public class AnnuaireProxy implements DefaultNamespace.Annuaire {
     return annuaire.affichageAnnonceNom(nom);
   }
   
+  public beans.Categorie[] affichageCategorie() throws java.rmi.RemoteException{
+    if (annuaire == null)
+      _initAnnuaireProxy();
+    return annuaire.affichageCategorie();
+  }
+  
+  public void creationAnnonce(java.lang.String sujet, java.lang.String nom, java.lang.String adresse, java.lang.String numero) throws java.rmi.RemoteException{
+    if (annuaire == null)
+      _initAnnuaireProxy();
+    annuaire.creationAnnonce(sujet, nom, adresse, numero);
+  }
+  
+  public void creationCategorie(java.lang.String categorie) throws java.rmi.RemoteException{
+    if (annuaire == null)
+      _initAnnuaireProxy();
+    annuaire.creationCategorie(categorie);
+  }
+  
+  public void modificationCategorie(java.lang.String sujet, int categorie_id) throws java.rmi.RemoteException{
+    if (annuaire == null)
+      _initAnnuaireProxy();
+    annuaire.modificationCategorie(sujet, categorie_id);
+  }
+  
+  public void modificationAnnonce(int categorie_id, java.lang.String nom, java.lang.String adresse, java.lang.String numero, int annonce_id) throws java.rmi.RemoteException{
+    if (annuaire == null)
+      _initAnnuaireProxy();
+    annuaire.modificationAnnonce(categorie_id, nom, adresse, numero, annonce_id);
+  }
+  
   public void suppressionCategorie(int categorie_id) throws java.rmi.RemoteException{
     if (annuaire == null)
       _initAnnuaireProxy();
     annuaire.suppressionCategorie(categorie_id);
-  }
-  
-  public void suppressionAnnonce(int annonce_id) throws java.rmi.RemoteException{
-    if (annuaire == null)
-      _initAnnuaireProxy();
-    annuaire.suppressionAnnonce(annonce_id);
-  }
-  
-  public beans.Annonce[] affichageAnnonceCategorie(int categorie_id) throws java.rmi.RemoteException{
-    if (annuaire == null)
-      _initAnnuaireProxy();
-    return annuaire.affichageAnnonceCategorie(categorie_id);
   }
   
   

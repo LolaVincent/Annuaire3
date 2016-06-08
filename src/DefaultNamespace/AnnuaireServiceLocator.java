@@ -22,7 +22,7 @@ public class AnnuaireServiceLocator extends org.apache.axis.client.Service imple
     }
 
     // Use to get a proxy class for Annuaire
-    private java.lang.String Annuaire_address = "http://localhost:8080/Annuaire/services/Annuaire";
+    private java.lang.String Annuaire_address = "http://localhost:8081/Annuaire/services/Annuaire";
 
     public java.lang.String getAnnuaireAddress() {
         return Annuaire_address;

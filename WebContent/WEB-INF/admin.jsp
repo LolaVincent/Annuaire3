@@ -1,19 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Creation d'une catégorie</title>
+<title>Accueil Client Administrateur</title>
 </head>
 <body>
-	<form  method="post" action="CreationCategorie">
-		<label for="sujet">Sujet : </label>
-		<input type="text" name="sujet" id="sujet" ></input>
+		<a href="<c:url value="/CreationAnnonce"/>">Créer une annonce</a>
 		<br>
-        <input type="submit" value ="envoyer"/>
-    </form>
-    <a href="<c:url value="/admin"/>">Retour à l'accueil</a>
+		<a href="<c:url value="/ListeAnnonce"/>">Liste des annonces</a>
+		<br>
+		<a href="<c:url value="/CreationCategorie"/>">Créer une catégorie</a>
+		<br>
+		<a href="<c:url value="/ListeCategorie"/>">Liste des categories</a>
+		<br>
 </body>
 </html>

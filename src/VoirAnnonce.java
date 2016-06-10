@@ -31,9 +31,9 @@ public class VoirAnnonce extends HttpServlet {
 		String annonce_nom = request.getParameter("annonce_nom");
 		AnnuaireProxy annuaire = new AnnuaireProxy();
 		Annonce annonce = annuaire.affichageAnnonceNom(annonce_nom);
-		String sujet = annonce.getCategorie().getSujet();
+		//String sujet = annonce.getCategorie().getSujet();
 		request.setAttribute("annonce", annonce);
-		request.setAttribute("sujet", sujet);
+		//request.setAttribute("sujet", sujet);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/VoirAnnonce.jsp").forward(request, response);
 	}
 

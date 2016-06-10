@@ -8,7 +8,7 @@
 package beans;
 
 public class Categorie  implements java.io.Serializable {
-    private int id;
+    private java.lang.Long id;
 
     private java.lang.String sujet;
 
@@ -16,7 +16,7 @@ public class Categorie  implements java.io.Serializable {
     }
 
     public Categorie(
-           int id,
+           java.lang.Long id,
            java.lang.String sujet) {
            this.id = id;
            this.sujet = sujet;
@@ -28,7 +28,7 @@ public class Categorie  implements java.io.Serializable {
      * 
      * @return id
      */
-    public int getId() {
+    public java.lang.Long getId() {
         return id;
     }
 
@@ -38,7 +38,7 @@ public class Categorie  implements java.io.Serializable {
      * 
      * @param id
      */
-    public void setId(int id) {
+    public void setId(java.lang.Long id) {
         this.id = id;
     }
 
@@ -74,7 +74,9 @@ public class Categorie  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            this.id == other.getId() &&
+            ((this.id==null && other.getId()==null) || 
+             (this.id!=null &&
+              this.id.equals(other.getId()))) &&
             ((this.sujet==null && other.getSujet()==null) || 
              (this.sujet!=null &&
               this.sujet.equals(other.getSujet())));
@@ -89,7 +91,9 @@ public class Categorie  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        _hashCode += getId();
+        if (getId() != null) {
+            _hashCode += getId().hashCode();
+        }
         if (getSujet() != null) {
             _hashCode += getSujet().hashCode();
         }
@@ -106,8 +110,8 @@ public class Categorie  implements java.io.Serializable {
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("id");
         elemField.setXmlName(new javax.xml.namespace.QName("http://beans", "id"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("sujet");

@@ -28,21 +28,17 @@ public class CreationCategorie extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		this.getServletContext().getRequestDispatcher("/WEB-INF/CreationCategorie.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/creationcategorie.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		 String sujet = request.getParameter("sujet");
- 		 
-		 AnnuaireProxy annuaire = new AnnuaireProxy();
-		 annuaire.creationCategorie(sujet);
-		 
-		 this.getServletContext().getRequestDispatcher("/WEB-INF/admin.jsp").forward(request, response);
+		String sujet = request.getParameter("sujet");		 
+		AnnuaireProxy annuaire = new AnnuaireProxy();
+		annuaire.creationCategorie(sujet);
+		this.getServletContext().getRequestDispatcher("/ListeCategorie").forward(request, response);
 	}
 
 }

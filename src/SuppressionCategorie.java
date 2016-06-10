@@ -8,19 +8,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import DefaultNamespace.AnnuaireProxy;
-import beans.Categorie;
 
 /**
- * Servlet implementation class ModificationAnnonce2
+ * Servlet implementation class SuppressionCategorie
  */
-@WebServlet("/ModificationAnnonce2")
-public class ModificationAnnonce2 extends HttpServlet {
+@WebServlet("/SuppressionCategorie")
+public class SuppressionCategorie extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ModificationAnnonce2() {
+    public SuppressionCategorie() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,8 +28,10 @@ public class ModificationAnnonce2 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		this.getServletContext().getRequestDispatcher("/WEB-INF/ModificationAnnonce2.jsp").forward(request, response);
+		int id = Integer.parseInt(request.getParameter("categorie_id"));
+		AnnuaireProxy annuaire = new AnnuaireProxy();
+		annuaire.suppressionCategorie( id );
+		this.getServletContext().getRequestDispatcher("/ListeCategorie").forward(request, response);
 	}
 
 	/**
@@ -38,17 +39,7 @@ public class ModificationAnnonce2 extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String nom = request.getParameter("nom");
-		String adresse = request.getParameter("adresse"); 
-		String numero = request.getParameter("numero");
-		String sujet = request.getParameter("categorie");
-		 		 
-		AnnuaireProxy annuaire = new AnnuaireProxy();
-		int annonce_id = annuaire.affichageAnnonceNom(nom).getId();
-		Categorie categorie = annuaire.affichageCategorieNom(sujet);
-		annuaire.modificationAnnonce(categorie.getId(), nom, adresse, numero,  annonce_id);
-		 
-		this.getServletContext().getRequestDispatcher("/WEB-INF/admin.jsp").forward(request, response);
+		doGet(request, response);
 	}
 
 }

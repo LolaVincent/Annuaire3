@@ -32,7 +32,7 @@ public class ListeAnnonce extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		AnnuaireProxy annuaire = new AnnuaireProxy();
-		Annonce[] annonces = annuaire.affichageAnnonce();
+		Annonce[] annonces = annuaire.affichageAnnonces();
 		request.setAttribute("annonces", annonces);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/ListeAnnonce.jsp").forward(request, response);
 	}

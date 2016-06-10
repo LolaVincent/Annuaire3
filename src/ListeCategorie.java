@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DefaultNamespace.AnnuaireProxy;
+import beans.Annonce;
+import beans.Categorie;
+
 /**
  * Servlet implementation class ListeCategorie
  */
@@ -26,8 +30,10 @@ public class ListeCategorie extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		this.getServletContext().getRequestDispatcher("/WEB-INF/ListeCategorie.jsp").forward(request, response);
+		AnnuaireProxy annuaire = new AnnuaireProxy();
+		Categorie[] categories = annuaire.affichageCategories();
+		request.setAttribute("categories", categories);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/listecategories.jsp").forward(request, response);
 	}
 
 	/**

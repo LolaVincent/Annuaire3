@@ -17,7 +17,8 @@
 </head>
 <body>
 <table>
-<form  method="post" action="ModificationAnnonce2">
+<form  method="post" action="ModificationAnnonce">
+		<input type="hidden" name="id" id="id" value="${ annonce.id }"></input>
 		<tr><td><label for="nom">Nom : </label></td>
 		<td><input type="text" name="nom" id="nom" value="${ annonce.nom }"></input></td></tr>
 		<tr><td><label for="adresse"><br>Adresse : </label></td>
@@ -27,9 +28,9 @@
 		<tr><td><label for="categorie">Catégorie: </label></td>
 		<td><select name="categorie" id="categorie">
 			<c:forEach items="${ categories }" var="categorie">
-				<option value="${ categorie.getSujet() }">${categorie.getSujet() }</option></tr>
+				<option value="${ categorie.getId() }">${categorie.getSujet() }</option>
 			</c:forEach>
-		</select></td>
+		</select></td></tr>
         <tr><td><input type="submit" value ="envoyer"/></td></tr>
     </form>
     <tr><td><a href="<c:url value="/admin"/>">Retour à l'accueil</a></td></tr>

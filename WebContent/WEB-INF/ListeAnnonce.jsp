@@ -25,13 +25,13 @@
 		<tr>
 			<td>${annonce.nom}</td>
 		
-			<td><a href="<c:url value="/VoirAnnonce"><c:param name="annonce_nom" value="${ annonce.nom}" /></c:url>">
+			<td><a href="<c:url value="/VoirAnnonce"><c:param name="annonce_nom" value="${ annonce.id}" /></c:url>">
 		                Voir
 		         </a><br>
-			<a href="<c:url value="/SuppressionAnnonce"><c:param name="annonce_nom" value="${ annonce.nom }" /></c:url>">
+			<a href="<c:url value="/SuppressionAnnonce"><c:param name="annonce_nom" value="${ annonce.id }" /></c:url>">
 		                Supprimer
 		         </a><br>
-		         <a href="<c:url value="/ModificationAnnonce"><c:param name="annonce_nom" value="${ annonce.nom }" /></c:url>">
+		         <a href="<c:url value="/ModificationAnnonce"><c:param name="annonce_nom" value="${ annonce.id }" /></c:url>">
 		                Modifier
 		         </a>
 		     </td>

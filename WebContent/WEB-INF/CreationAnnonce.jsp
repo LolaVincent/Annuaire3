@@ -25,10 +25,10 @@
 		<tr><td><label for="numero"><br>Téléphone :</label></td>
 		<td><input type="text" name="numero" id="numero"></input></td></tr>
 		<br>
-		<tr><td><label for="caegorie">Catégorie : </label></td>
+		<tr><td><label for="categorie">Catégorie : </label></td>
 		<td><select name="categorie" id="categorie">
 			<c:forEach items="${ categories }" var="categorie">
-				<option value="${ categorie.getSujet() }">${categorie.getSujet() }</option>
+				<option value="${ categorie.getId() }">${categorie.getSujet() }</option>
 			</c:forEach>
 		</select></td></tr>
         <tr><td><input type="submit" value ="envoyer"/></td></tr>

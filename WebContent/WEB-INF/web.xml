@@ -10,67 +10,83 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
-    <servlet-name>admin</servlet-name>
-    <servlet-class>admin</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>CreationAnnonce</servlet-name>
-    <servlet-class>CreationAnnonce</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>ListeAnnonce</servlet-name>
-    <servlet-class>ListeAnnonce</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>CreationCategorie</servlet-name>
-    <servlet-class>CreationCategorie</servlet-class>
-  </servlet>
-  <servlet>
     <servlet-name>ListeCategorie</servlet-name>
     <servlet-class>ListeCategorie</servlet-class>
   </servlet>
-  <servlet>
-    <servlet-name>ModificationAnnonce</servlet-name>
-    <servlet-class>ModificationAnnonce</servlet-class>
-  </servlet>
-    <servlet>
-    <servlet-name>ModificationAnnonce2</servlet-name>
-    <servlet-class>ModificationAnnonce2</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>VoirAnnonce</servlet-name>
-    <servlet-class>VoirAnnonce</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>admin</servlet-name>
-    <url-pattern>/admin</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>CreationAnnonce</servlet-name>
-    <url-pattern>/CreationAnnonce</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>ListeAnnonce</servlet-name>
-    <url-pattern>/ListeAnnonce</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>CreationCategorie</servlet-name>
-    <url-pattern>/CreationCategorie</url-pattern>
-  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ListeCategorie</servlet-name>
     <url-pattern>/ListeCategorie</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>SuppressionCategorie</servlet-name>
+    <servlet-class>SuppressionCategorie</servlet-class>
+  </servlet>
   <servlet-mapping>
-    <servlet-name>ModificationAnnonce</servlet-name>
-    <url-pattern>/ModificationAnnonce</url-pattern>
+    <servlet-name>SuppressionCategorie</servlet-name>
+    <url-pattern>/SuppressionCategorie</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ModificationCategorie</servlet-name>
+    <servlet-class>ModificationCategorie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModificationCategorie</servlet-name>
+    <url-pattern>/ModificationCategorie</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CreationCategorie</servlet-name>
+    <servlet-class>CreationCategorie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreationCategorie</servlet-name>
+    <url-pattern>/CreationCategorie</url-pattern>
+  </servlet-mapping>
+  <servlet>
+	<servlet-name>admin</servlet-name>
+	<servlet-class>admin</servlet-class>
+  </servlet>
+  <servlet>
+	<servlet-name>CreationAnnonce</servlet-name>
+	<servlet-class>CreationAnnonce</servlet-class>
+  </servlet>
+  <servlet>
+	<servlet-name>ListeAnnonce</servlet-name>
+	<servlet-class>ListeAnnonce</servlet-class>
+  </servlet>
+  <servlet>
+	<servlet-name>ModificationAnnonce</servlet-name>
+	<servlet-class>ModificationAnnonce</servlet-class>
+  </servlet>
+  <servlet>
+	<servlet-name>ModificationAnnonce2</servlet-name>
+	<servlet-class>ModificationAnnonce2</servlet-class>
+  </servlet>
+  <servlet>
+	<servlet-name>VoirAnnonce</servlet-name>
+	<servlet-class>VoirAnnonce</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>admin</servlet-name>
+	<url-pattern>/admin</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>ModificationAnnonce2</servlet-name>
-    <url-pattern>/ModificationAnnonce2</url-pattern>
+	<servlet-name>CreationAnnonce</servlet-name>
+	<url-pattern>/CreationAnnonce</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>VoirAnnonce</servlet-name>
-    <url-pattern>/VoirAnnonce</url-pattern>
+	<servlet-name>ListeAnnonce</servlet-name>
+	<url-pattern>/ListeAnnonce</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+	<servlet-name>ModificationAnnonce</servlet-name>
+	<url-pattern>/ModificationAnnonce</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+	<servlet-name>ModificationAnnonce2</servlet-name>
+	<url-pattern>/ModificationAnnonce2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+	<servlet-name>VoirAnnonce</servlet-name>
+	<url-pattern>/VoirAnnonce</url-pattern>
   </servlet-mapping>
 </web-app>

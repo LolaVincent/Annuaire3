@@ -16,7 +16,7 @@ public class AnnuaireSoapBindingStub extends org.apache.axis.client.Stub impleme
     static org.apache.axis.description.OperationDesc [] _operations;
 
     static {
-        _operations = new org.apache.axis.description.OperationDesc[12];
+        _operations = new org.apache.axis.description.OperationDesc[13];
         _initOperationDesc1();
         _initOperationDesc2();
     }
@@ -25,24 +25,59 @@ public class AnnuaireSoapBindingStub extends org.apache.axis.client.Stub impleme
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("affichageCategorieNom");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "sujet"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.setName("affichageAnnonce");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://beans", "Categorie"));
-        oper.setReturnClass(beans.Categorie.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageCategorieNomReturn"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://beans", "Annonce"));
+        oper.setReturnClass(beans.Annonce.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageAnnonceReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[0] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("suppressionAnnonce");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "annonce_id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("creationAnnonce");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "categorie_id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "nom"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "adresse"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "numero"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[1] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("affichageCategories");
+        oper.setReturnType(new javax.xml.namespace.QName("http://beans", "Categorie"));
+        oper.setReturnClass(beans.Categorie[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageCategoriesReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[2] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("affichageAnnonces");
+        oper.setReturnType(new javax.xml.namespace.QName("http://beans", "Annonce"));
+        oper.setReturnClass(beans.Annonce[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageAnnoncesReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[3] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("affichageCategorie");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://beans", "Categorie"));
+        oper.setReturnClass(beans.Categorie.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageCategorieReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[4] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("affichageAnnonceCategorie");
@@ -53,7 +88,18 @@ public class AnnuaireSoapBindingStub extends org.apache.axis.client.Stub impleme
         oper.setReturnQName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageAnnonceCategorieReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[2] = oper;
+        _operations[5] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("modificationCategorie");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "sujet"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[6] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("affichageAnnonceAdresse");
@@ -62,50 +108,6 @@ public class AnnuaireSoapBindingStub extends org.apache.axis.client.Stub impleme
         oper.setReturnType(new javax.xml.namespace.QName("http://beans", "Annonce"));
         oper.setReturnClass(beans.Annonce[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageAnnonceAdresseReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[3] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("affichageAnnonce");
-        oper.setReturnType(new javax.xml.namespace.QName("http://beans", "Annonce"));
-        oper.setReturnClass(beans.Annonce[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageAnnonceReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[4] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("affichageAnnonceNom");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "nom"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://beans", "Annonce"));
-        oper.setReturnClass(beans.Annonce.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageAnnonceNomReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[5] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("affichageCategorie");
-        oper.setReturnType(new javax.xml.namespace.QName("http://beans", "Categorie"));
-        oper.setReturnClass(beans.Categorie[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageCategorieReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[6] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("creationAnnonce");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "sujet"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "nom"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "adresse"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "numero"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[7] = oper;
@@ -120,10 +122,8 @@ public class AnnuaireSoapBindingStub extends org.apache.axis.client.Stub impleme
         _operations[8] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("modificationCategorie");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "sujet"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "categorie_id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("suppressionCategorie");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
@@ -135,6 +135,17 @@ public class AnnuaireSoapBindingStub extends org.apache.axis.client.Stub impleme
     private static void _initOperationDesc2(){
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("affichageAnnonceNom");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "nom"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://beans", "Annonce"));
+        oper.setReturnClass(beans.Annonce[].class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageAnnonceNomReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[10] = oper;
+
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("modificationAnnonce");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "categorie_id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
@@ -150,16 +161,16 @@ public class AnnuaireSoapBindingStub extends org.apache.axis.client.Stub impleme
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[10] = oper;
+        _operations[11] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("suppressionCategorie");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "categorie_id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.setName("suppressionAnnonce");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://DefaultNamespace", "id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[11] = oper;
+        _operations[12] = oper;
 
     }
 
@@ -272,7 +283,7 @@ public class AnnuaireSoapBindingStub extends org.apache.axis.client.Stub impleme
         }
     }
 
-    public beans.Categorie affichageCategorieNom(java.lang.String sujet) throws java.rmi.RemoteException {
+    public beans.Annonce affichageAnnonce(int id) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -284,11 +295,140 @@ public class AnnuaireSoapBindingStub extends org.apache.axis.client.Stub impleme
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageCategorieNom"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageAnnonce"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {sujet});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(id)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (beans.Annonce) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (beans.Annonce) org.apache.axis.utils.JavaUtils.convert(_resp, beans.Annonce.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public void creationAnnonce(int categorie_id, java.lang.String nom, java.lang.String adresse, java.lang.String numero) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[1]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "creationAnnonce"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(categorie_id), nom, adresse, numero});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public beans.Categorie[] affichageCategories() throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[2]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageCategories"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (beans.Categorie[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (beans.Categorie[]) org.apache.axis.utils.JavaUtils.convert(_resp, beans.Categorie[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public beans.Annonce[] affichageAnnonces() throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[3]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageAnnonces"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (beans.Annonce[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (beans.Annonce[]) org.apache.axis.utils.JavaUtils.convert(_resp, beans.Annonce[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public beans.Categorie affichageCategorie(int id) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[4]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageCategorie"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(id)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -306,39 +446,12 @@ public class AnnuaireSoapBindingStub extends org.apache.axis.client.Stub impleme
 }
     }
 
-    public void suppressionAnnonce(int annonce_id) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[1]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "suppressionAnnonce"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(annonce_id)});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        extractAttachments(_call);
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
     public beans.Annonce[] affichageAnnonceCategorie(java.lang.String sujet) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[2]);
+        _call.setOperation(_operations[5]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -367,12 +480,39 @@ public class AnnuaireSoapBindingStub extends org.apache.axis.client.Stub impleme
 }
     }
 
+    public void modificationCategorie(java.lang.String sujet, int id) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[6]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "modificationCategorie"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {sujet, new java.lang.Integer(id)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
     public beans.Annonce[] affichageAnnonceAdresse(java.lang.String adresse) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[3]);
+        _call.setOperation(_operations[7]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -396,135 +536,6 @@ public class AnnuaireSoapBindingStub extends org.apache.axis.client.Stub impleme
                 return (beans.Annonce[]) org.apache.axis.utils.JavaUtils.convert(_resp, beans.Annonce[].class);
             }
         }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public beans.Annonce[] affichageAnnonce() throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[4]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageAnnonce"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (beans.Annonce[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (beans.Annonce[]) org.apache.axis.utils.JavaUtils.convert(_resp, beans.Annonce[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public beans.Annonce affichageAnnonceNom(java.lang.String nom) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[5]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageAnnonceNom"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {nom});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (beans.Annonce) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (beans.Annonce) org.apache.axis.utils.JavaUtils.convert(_resp, beans.Annonce.class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public beans.Categorie[] affichageCategorie() throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[6]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageCategorie"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (beans.Categorie[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (beans.Categorie[]) org.apache.axis.utils.JavaUtils.convert(_resp, beans.Categorie[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public void creationAnnonce(java.lang.String sujet, java.lang.String nom, java.lang.String adresse, java.lang.String numero) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[7]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "creationAnnonce"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {sujet, nom, adresse, numero});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        extractAttachments(_call);
   } catch (org.apache.axis.AxisFault axisFaultException) {
   throw axisFaultException;
 }
@@ -557,7 +568,7 @@ public class AnnuaireSoapBindingStub extends org.apache.axis.client.Stub impleme
 }
     }
 
-    public void modificationCategorie(java.lang.String sujet, int categorie_id) throws java.rmi.RemoteException {
+    public void suppressionCategorie(int id) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -569,11 +580,11 @@ public class AnnuaireSoapBindingStub extends org.apache.axis.client.Stub impleme
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "modificationCategorie"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "suppressionCategorie"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {sujet, new java.lang.Integer(categorie_id)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(id)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -584,12 +595,46 @@ public class AnnuaireSoapBindingStub extends org.apache.axis.client.Stub impleme
 }
     }
 
-    public void modificationAnnonce(int categorie_id, java.lang.String nom, java.lang.String adresse, java.lang.String numero, int annonce_id) throws java.rmi.RemoteException {
+    public beans.Annonce[] affichageAnnonceNom(java.lang.String nom) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[10]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "affichageAnnonceNom"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {nom});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (beans.Annonce[]) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (beans.Annonce[]) org.apache.axis.utils.JavaUtils.convert(_resp, beans.Annonce[].class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public void modificationAnnonce(int categorie_id, java.lang.String nom, java.lang.String adresse, java.lang.String numero, int annonce_id) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[11]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
@@ -611,23 +656,23 @@ public class AnnuaireSoapBindingStub extends org.apache.axis.client.Stub impleme
 }
     }
 
-    public void suppressionCategorie(int categorie_id) throws java.rmi.RemoteException {
+    public void suppressionAnnonce(int id) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[11]);
+        _call.setOperation(_operations[12]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("");
         _call.setEncodingStyle(null);
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "suppressionCategorie"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://DefaultNamespace", "suppressionAnnonce"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(categorie_id)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(id)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;

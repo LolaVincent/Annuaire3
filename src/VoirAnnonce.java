@@ -28,12 +28,10 @@ public class VoirAnnonce extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String annonce_nom = request.getParameter("annonce_nom");
+		int annonce_id = Integer.parseInt(request.getParameter("annonce_nom"));
 		AnnuaireProxy annuaire = new AnnuaireProxy();
-		Annonce annonce = annuaire.affichageAnnonceNom(annonce_nom);
-		//String sujet = annonce.getCategorie().getSujet();
+		Annonce annonce = annuaire.affichageAnnonce(annonce_id);
 		request.setAttribute("annonce", annonce);
-		//request.setAttribute("sujet", sujet);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/VoirAnnonce.jsp").forward(request, response);
 	}
 

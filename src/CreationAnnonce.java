@@ -32,7 +32,7 @@ public class CreationAnnonce extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		AnnuaireProxy annuaire = new AnnuaireProxy();
-		Categorie[] categories = annuaire.affichageCategorie();
+		Categorie[] categories = annuaire.affichageCategories();
 		request.setAttribute("categories", categories);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/CreationAnnonce.jsp").forward(request, response);
 	}
@@ -44,7 +44,7 @@ public class CreationAnnonce extends HttpServlet {
 		 String nom = request.getParameter("nom");
 		 String adresse = request.getParameter("adresse"); 
 		 String numero = request.getParameter("numero");
-		 String categorie = request.getParameter("categorie");
+		 int categorie = Integer.parseInt(request.getParameter("categorie"));
 		 		 
 		 AnnuaireProxy annuaire = new AnnuaireProxy();
 		 annuaire.creationAnnonce(categorie, nom, adresse, numero);
